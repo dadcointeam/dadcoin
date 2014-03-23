@@ -36,9 +36,9 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
 
 map<uint256, CBlockIndex*> mapBlockIndex;
-uint256 hashGenesisBlock("");
+uint256 hashGenesisBlock("0x00000079304f5b10eba026428f711f046f85f834513514c502e3089bf340be7000000079304f5b10eba026428f711f046f85f834513514c502e3089bf340be70");
 static const unsigned int timeGenesisBlock = 1395584761;
-static const unsigned int nNonceGenesisBlock = 0;
+static const unsigned int nNonceGenesisBlock = 2547647;
 static CBigNum bnProofOfWorkLimit(~uint256(0) >> 24);
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;
@@ -2855,7 +2855,7 @@ bool InitBlockIndex() {
     // Only add the genesis block if not reindexing (in which case we reuse the one already on disk)
     if (!fReindex) {
         // Genesis block
-        const char* pszTimestamp = "Shape-shifting software defends against botnet hacks";
+        const char* pszTimestamp = "Monetary policy should be less accommodative when bond markets are overheated";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -2880,7 +2880,7 @@ bool InitBlockIndex() {
         uint256 hash = block.GetHash();
 
         // set to true to mine genesis block
-        if (false && block.GetHash() != hashGenesisBlock)
+        if (true && block.GetHash() != hashGenesisBlock)
         {
             printf("Searching for genesis block...\n");
 
@@ -2916,7 +2916,7 @@ bool InitBlockIndex() {
             block.print();
         }
         //ASSERT DEBUG
-        assert(block.hashMerkleRoot == uint256(""));
+        assert(block.hashMerkleRoot == uint256("0xafc242d37b4196ab0b4290f92a97a2a9b6aca5fa9d0fdf4d6fe3eef485f4cedc"));
         assert(hash == hashGenesisBlock);
 
         // Start new block file
